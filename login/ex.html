@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var input="2.Go.uthamjatthan@gmail.com"
+        var pattern=/^\d([.-]{1}\w+)*@gmail.com/
+        document.write(input.match(pattern))
+        var st="Goutham Jatthan"
+        pattern=/(\S*)\s+(\S*) $2 $1/
+        var math=st.match(pattern)
+        document.write('<br>'+math)
+        const password = "Pp@A0rXYd2Y3_";  // Replace this with your password
+
+const passwordRegex = /^(?=(.*[a-zA-Z]){3,})(?=(.*\d){3,})(?=(.*[\W_]){2,}).*$/;
+var reg=/^[A-z_](?=(.*[A-Z]){3,})(?=(.*[a-z]){2,})(?=(.*\d){2,})(?=(.*[\W_]){2,}).*$/
+console.log(reg)
+if (password.match(reg)) {
+    console.log(password.match(reg));
+} else {
+    console.log("Invalid password");
+}
+    </script>
+</body>
+</html>

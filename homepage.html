@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ebook</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootsrap linking-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script>
+      const readBook=()=>{
+        window.location.href='design.html';
+      }
+    </script>
+    <style>
+      .animate-button {
+    position: relative;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.loader {
+    display: none;
+    border: 4px solid #f50909;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+      a{
+        text-decoration: none;
+      }
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            
+        }
+         /* body{
+            
+            /* background-image: url("3.jpg"); */
+            /* opacity: 85%;
+            background-size: cover; }*/
+        #logo{
+          mix-blend-mode:difference;
+          width: 100px;
+          color:white;
+        }
+        .btnbg{ 
+                background:-webkit-linear-gradient(right,#0351b1,#ff00b7);
+                overflow: hidden;
+                border: none;
+        }
+        .fas.fa-user {
+  font-size: 1.5rem;
+  color: #fff; /* Set the desired color */
+}
+.user-button {
+   
+  background-color: #5f5c63;
+}
+        .navbar-gray {
+            background-color: rgb(22, 6, 49);
+            /* opacity: 75%; */
+            /* position: absolute; */
+            width: 100%;
+            top: 0;
+        }
+        .navbar-gray .offcanvas-body .navbar-nav a:hover {
+            text-decoration: underline;
+            text-decoration-color:#ff00b7; /* Change the underline color to red */
+        }
+        .home{
+            display: flex;
+            /* position: relative; */
+            align-items: center;
+            height: 100vh; 
+            background: url(3.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            
+            
+        }
+        .home::before {
+            content: "";
+            position: absolute;
+            
+            left: 0;
+            z-index: 1;
+            height: 100%;
+            width: 70%; /* Adjust the width of the gradient as needed */
+            background: linear-gradient(to left, transparent, rgba(0, 0, 0, 1.5)); /* Gradient background */
+        }
+       .content {
+    position: absolute;
+    top: 55%;
+    left: 5%;
+    z-index: 2;
+    color: white;
+    text-align: center;
+}
+        .content h3{
+            color:white;
+            font-size: 3rem;
+            font-family: Brush Script MT, Brush Script Std, cursive;
+        }
+            /* sidebar bgcolor */
+        .custom-sidebar { 
+            background-color: #a7a9ab; 
+            color: white; 
+        }
+/* latest products css */
+.products .latest-books {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5px;
+  margin-top: 50px;
+}
+.heading{
+    
+    padding: 1rem;
+    margin: 2rem 0;
+    background-color: #e0e3e6;
+    color: black;
+}
+.book {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 5px 2px;
+  position: relative;
+  /* min-width:350px;
+  min-height: 300px; */
+}
+.premium{
+  position: absolute;
+  top:0;
+  right:0;
+  width: 20px;
+}
+
+.book-image {
+  height: 300px;
+  width:200px;
+  background-size: cover;
+  background-position: center;
+  /* margin-right: 0.1rem; */
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  text-align: left;
+  }
+
+.book-header{
+    margin: 0;
+    text-align: left;
+    max-width: 160px;
+    min-height: 160px;
+}
+
+.book-title {
+  color:black;
+  font-size: 1.1rem;
+  
+}
+
+.book-author {
+  font-size: 1rem;
+  color: black;
+}
+
+.book-button {
+  margin: 0 0 7px 8px;
+  cursor: pointer;
+  max-width: 120px;
+  text-align: center;
+  background:-webkit-linear-gradient(right,#0351b1,#ff00b7);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  
+}
+
+.book-button:hover {
+  transform: scale(1.1);
+}
+/* about us css */
+.about .container{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding:10px;
+  
+}
+ .container .video-container{
+  flex:1 1;
+  position: relative;
+ }
+ .video-container video{
+  width: 100%;
+  border-radius: 0.5rem;
+   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+   object-fit: cover;
+ }
+ .container .aboutcontent{
+  flex: 1 1;
+  
+ }
+ .container .aboutcontent p{
+  font-size: 20px;
+  padding: 5px 0;
+  line-height: 1.5;
+ }
+ .video-container h4{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  width: 100%;
+  padding:10px 0;
+  text-align: center;
+  mix-blend-mode: screen;
+ }
+ /* contact us */
+ .contact {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  background: #dadadd;
+  margin: 20px 0;
+}
+
+.contact .icons {
+  background: #fff;
+  padding: 5px;
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  flex: 1 1;
+  margin: 10px;
+}
+
+.icons img {
+  margin-right: 2rem;
+}
+
+.icons .text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.icons h4 {
+  color: #333;
+  padding-bottom: 10px;
+}
+
+@media (max-width:991px){
+            .sidebar{
+                background-color: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(100px);
+            }
+            .container .aboutcontent p{
+                font-size: 15px;
+                padding: 2px 0;
+                
+              }
+            @media (max-width:768px){
+                .aboutcontent h3{font-size: 1.5rem;
+                }
+                .offcanvas{width:100%;}
+                 
+                .container .aboutcontent p{
+                font-size: 15px;
+                padding: 2px 0;
+                
+              }
+              .contact {
+                  flex-direction: column;
+    }
+  }
+            @media (max-width:450px){
+              .book-header{
+                font-size: 50%;
+              }
+              .heading{
+                font-size: 1rem;
+              }
+              .container .aboutcontent p{
+                font-size: 12px;
+                padding: 1px 0;
+                
+              }
+              .container .video-container video{
+                height:300px;
+              }
+
+            }
+            
+            
+        }
+
+    </style>
+</head>
+<body >
+  
+<!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-gray">
+  <div class="container">
+    <!-- logo -->
+    <a class="navbar-brand" href="#"><img id="logo" src="logo.png"></a>
+    
+    <!-- toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- sidebar -->
+    <div class="sidebar offcanvas custom-sidebar offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <!-- sidebar header -->
+        <div class="offcanvas-header text-white border-bottom">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Ebook</h5>
+        <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <!-- sidebar body -->
+      <div class="offcanvas-body">
+        
+        <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="category.html">Category</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="user-rec/index.html">Community</a>
+          </li>
+          
+        </ul>
+        <!-- <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+        <!-- lgin/signup -->
+        <div class=" navbar-nav justify-content-end align-items-center fs-5 flex-grow-1 pe-3">
+          <div class="nav-item mx-2 " style="margin-top: 5px;">
+            <a href="userprofile/index (3).html" class="btn btn-primary rounded-circle user-button">
+              <img id="user-pic" src="user-rec/img1.jpg" class="rounded-circle" style="width: 30px;">
+            </a>
+          </div>
+        </div>
+        <!-- <a href="#" class="btn btn-primary rounded-circle user-button">
+          <i class="fas fa-user"></i>
+        </a> -->
+        <!-- <div class="d-flex justify-content-center align-items-center mt-3">
+          <a href="#" class="btn btn-primary rounded-circle user-button">
+            <i class="fas fa-user"></i>
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="home">
+<!-- tagline -->
+<div class="content">
+    <h3>Where book lovers belong.</h3>
+    <p>Come,explore the universe of words,one book at a time</p>
+    <button name="explore" class="btnbg rounded-4 text-white text-decoration-none px-3 py-1"><a href="#Latest books" style="text-decoration: none; color: white;">Explore</a></button>
+</div>
+</section>
+<!-- latest products -->
+<section class="products">
+    <h3 class="heading"><a id="Latest books">Latest books</a></h3>
+    <div class="latest-books">
+    <div class="row"> 
+      <div class="col-sm-6 col-md-4 col-lg-4">
+        <div class="book">
+          <img class="premium" src="premium.png">
+            <div class="book-image"
+                style="background-image: url('harry-potter-and-the-philosophers-333.jpg');"></div>
+            <div class="book-info">
+                  <div class="book-header">
+                                <h3 class="book-title">Harry Potter and the Philosophers</h3>
+                                <p class="book-author">J.K.Rowling</p>
+                                <p class="book-author">CATEGORY: Fantasy<br>
+                                    <img src="5star.png">
+                                </p>
+                </div>
+                <a class="book-button rounded-4" href="rj/checkout.php">Read Now</a>
+                <button id="saveButton" class="animate-button book-button rounded-4">
+                  <div class="loader"></div>
+                  <span id="buttonText">Save Book</span>
+              </button>
+              <script src="userprofile/btn.js"></script>
+                <!-- <button class="book-button rounded-4">Save Book</button> -->
+            </div>
+        </div>
+    </div>
+      
+    <div class="col-sm-6 col-md-4 col-lg-4">
+      <div class="book">
+          <div class="book-image" style="background-image: url(Your-Dreams-are-Mine-Now-by-Ravinder-Singh.jpg);"></div>
+          <div class="book-info">
+    <div class="book-header">
+              <h3 class="book-title">Your dreams are mine now</h3>
+              <p class="book-author">Ravinder Singh</p>
+              <p class= "book-author">CATEGORY:Love<br>
+                  <img src="4star.png">
+              </p>
+    </div>
+              <a class="book-button rounded-4" href="ex.html">Read Now</a>
+              <button class="book-button rounded-4">Save Book</button>
+          </div>
+      </div>
+  </div>
+
+  <div class="col-sm-6 col-md-4 col-lg-4">
+    <div class="book">
+      <img class="premium" src="premium.png">
+        <div class="book-image" style="background-image: url(Two-States-–-Chetan-Bhagat.jpg);"></div>
+        <div class="book-info">
+            <div class="book-header">
+                        <h3 class="book-title">2 States</h3>
+                        <p class="book-author">Chethan Bhagat</p>
+                        <p class= "book-author">CATEGORY:Love<br>
+                            <img src="4star.png">
+                        </p>
+            </div>
+            <button class="book-button rounded-4">Read Now</button>
+            <button class="book-button rounded-4">Save Book</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-4">
+  <div class="book">
+      
+      <div class="book-image" style="background-image: url(stranger-things.jpg);"></div>
+      <div class="book-info">
+<div class="book-header">
+          <h3 class="book-title">Stranger Things</h3>
+          <p class="book-author">Michael Moreci</p>
+          <p class= "book-author">CATEGORY:Comics<br>
+              <img src="5star.png">
+          </p>
+</div>
+          <button class="book-button rounded-4" onclick="readBook()">Read Now</button>
+          <button class="book-button rounded-4">Save Book</button>
+      </div>
+  </div>
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-4">
+  <div class="book">
+    <img class="premium" src="premium.png">
+      <div class="book-image"
+          style="background-image: url('warbodiea.jpg');"></div>
+      <div class="book-info">
+            <div class="book-header">
+                          <h3 class="book-title">War Bodies</h3>
+                          <p class="book-author">Neil Asher</p>
+                          <p class="book-author">CATEGORY:Sci-fi<br>
+                              <img src="3star.png">
+                          </p>
+            </div>
+          <button class="book-button rounded-4">Read Now</button>
+          <button class="book-button rounded-4">Save Book</button>
+      </div>
+  </div>
+</div>
+<div class="col-sm-6 col-md-4 col-lg-4">
+          <div class="book">
+            <img class="premium" src="premium.png">
+            <div class="book-image" style="background-image: url('spiderman.jpg');"></div>
+            <div class="book-info">
+              <div class="book-header">
+                  <h3 class="book-title">Spine Tingling Spiderman</h3>
+                  <p class="book-author">Ahmed,Ferreyra</p>
+                  <p class="book-author">CATEGORY:Comics<br>
+                    <img src="5star.png">
+                  </p>
+              </div>
+              <button class="book-button rounded-4">Read Now</button>
+              <button class="book-button rounded-4">Save Book</button>
+            </div>
+          </div>
+        </div>
+
+         </div>
+    </div>
+        
+    </section>  
+    <!-- About us -->
+    <section class="about">
+      <h3 class="heading"><a id="about">About Us</a></h3>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+              <div class="video-container">
+                <video src="vid1 (online-video-cutter.com).mp4" loop autoplay muted></video>
+                <h4>Read at your own comfort</h4>
+            </div>
+          </div>
+        <div class="col-lg-8 col-md-6">
+          <div class="aboutcontent">
+            <h3>Why choose us?</h3>
+            <p class="example">
+              Discover an extensive and diverse ebook library at our  Ebook website. We offer high-quality content at affordable prices,
+              making your reading experience enjoyable and budget-friendly.
+              Our mission is to make the world of literature accessible to everyone.
+                Through our platform, we aim to promote reading, learning, and creativity.
+            </p>
+            <p class="example">We invite you to become a part of our literary journey. Whether you're a reader, an author, or someone who appreciates the magic of words,
+              [Your Ebook Website Name] is your place to explore, connect, and grow with literature.</p>
+              <p>Happy learning.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="icons">
+        <img src="message.png">
+        <div class="text-container">
+          <h4><a id="contact">Email</a></h4>
+          <p>ebook12@gmail.com</p>
+        </div>
+      </div>
+      <div class="icons">
+        <img src="phone.png">
+        <div class="text-container">
+          <h4>Phone</h4>
+          <p>+91-9988758921</p>
+        </div>
+      </div>
+      <div class="icons">
+        <img src="location.png">
+        <div class="text-container">
+          <h4>Address</h4>
+          <p>Manipal institute of technology, Manipal</p>
+        </div>
+      </div>
+    </section>
+</body>
+</html>

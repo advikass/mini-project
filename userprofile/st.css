@@ -1,0 +1,65 @@
+/* Add your custom CSS here */
+
+/* Change the layout based on screen size */
+#img-logo{
+    mix-blend-mode: multiply;
+    width: 80px;
+    margin-left: 20px;
+}
+#change-image,#btn-pro{
+min-width: 150px;
+}
+#btn-pro{
+    color: rgb(255, 255, 255);
+    background-color: rgba(248, 112, 0, 0.63);
+}
+#user-image{
+    width: 80px;
+    height: 90px;
+}
+i{
+    margin: 0px 4px;
+}
+@media (max-width: 500px) {
+    /* #profile-tabs .list-group-item {
+        display: block;
+    } */
+    #change-image,#btn-pro{
+        width: fit-content;
+        font-size: small;
+        }
+    .list-group-horizontal{
+        display: flex;
+        flex-direction: row;
+        height: 30px;
+    }
+    .list-group-horizontal a{
+        font-size: 10px;
+        margin: auto;
+        padding: 5px 20px;
+        
+    }
+    .tab-pane{
+        margin-top: 20px;
+    }
+    .tab-pane .btn {
+        margin-top: 15px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+    .text-center{
+        position: relative;
+    }
+    #change-image{
+        /* position: absolute;
+        left:150px;
+        bottom: 0px; */
+        background-color: transparent;
+        color: blue;
+        width:20px;
+        height: 20px;
+        border: 0px solid transparent;
+    }
+}

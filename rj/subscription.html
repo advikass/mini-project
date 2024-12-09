@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>age</title>
+  <script src="loadpay.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    @media (max-width:450px){
+      .subscription-card{
+        margin: 20px;
+        background-color: black;
+      }
+    }
+body{
+	background-image:url(download6.jpg);
+	background-position:center;
+	background-size:cover;
+	
+background-repeat:no-repeat;
+}
+ .subscription-card img {
+  max-width: 25%;
+}
+
+.img1{
+width:50px;
+}
+.subscription-card{
+background-color:#FAEBD7;
+border-radius:10% 10% 10% 10%;
+transition: all ease-in-out 2s;
+}
+.subscription-card:hover{
+transform:scale(1.1);
+z-index:2;
+}
+.card-title{
+align-text: center;
+text-align:center;}
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div id="c" class="col-lg-4">
+        <div class="card subscription-card cr" style="background-color:#cc9966;">
+          <img class="img1" src="basic-plan-image.jpg" class="card-img-top" alt="Basic Plan Image" width="10px" height="100px">
+          <div class="card-body">
+            <h5 class="card-title">Basic Plan</h5>
+            <p class="card-text">Rs.200/</p>
+            <ul class="list-group">
+              <li class="list-group-item"><img src="star.jpg" width="15px" height="10px">only 2 books</li>
+              <li class="list-group-item"><img src="star.jpg" width="15px" height="10px">Book download</li>
+              <!-- <li class="list-group-item"><img src="star.jpg" width="15px" height="10px">Feature 3</li> -->
+            </ul>
+          </div>
+          <div class="card-footer">
+           <button onclick="getPage()" class="btn btn-success">Subscribe</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card subscription-card" style="background-color:#808080;">
+          <img src="premium-plan-image.jpg" class="card-img-top" alt="Premium Plan Image" width="10px" height="100px">
+          <div class="card-body">
+            <h5 class="card-title">Premium Plan</h5>
+            <p class="card-text">Rs.800/Year</p>
+            <ul class="list-group">
+              <li class="list-group-item"><img src="star.jpg" width="15px" height="10px">only 9 books</li>
+              <li class="list-group-item"><img src="star.jpg" width="15px" height="10px">Book download</li>
+              <li class="list-group-item"><img src="star.jpg" width="15px" height="10px">Access to best seller books</li>
+              <li class="list-group-item"><img src="star.jpg" width="15px" height="10px">Follow authors</li>
+            </ul>
+          </div>
+          <div class="card-footer">
+           <button onclick="getPage()" class="btn btn-success">Subscribe</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card subscription-card" style="background-color:#ffdb4d;">
+          <img src="pro-plan-image.jpg" class="card-img-top" alt="Pro Plan Image" width="6px" height="100px">
+          <div class="card-body" >
+            <h5 class="card-title">Pro Plan</h5>
+            <p class="card-text">Rs.1200/Year</p>
+            <ul class="list-group" style="background-color:#ffdb4d;">
+              <li class="list-group-item"><img src="star.jpg" width="15px" height="10px">Unlimted books</li>
+              <li class="list-group-item"><img src="star.jpg" width="15px" height="10px">Book download</li>
+              <li class="list-group-item"><img src="star.jpg" width="15px" height="10px">Follow authors</li>
+              <li class="list-group-item"><img src="star.jpg" width="15px" height="10px">Access to best seller books</li>
+              <!-- <li class="list-group-item"><img src="star.jpg" width="15px" height="10px">Feature 5</li> -->
+            </ul>
+          </div>
+          <div class="card-footer">
+            <a href="payment2.html" class="btn btn-success">Subscribe</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+

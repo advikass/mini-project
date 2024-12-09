@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ebook</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootsrap linking-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+    
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            
+        }
+         /* body{
+            
+            /* background-image: url("3.jpg"); */
+            /* opacity: 85%;
+            background-size: cover; }*/
+        
+        .btnbg{ 
+                background:-webkit-linear-gradient(right,#0351b1,#ff00b7);
+                overflow: hidden;
+                border: none;
+        }
+        .navbar-gray {
+            background-color: rgb(22, 6, 49);
+            opacity: 75%;
+            position: absolute;
+            width: 100%;
+            top: 0;
+        }
+        .navbar-gray .offcanvas-body .navbar-nav a:hover {
+            text-decoration: underline;
+            text-decoration-color:#ff00b7; /* Change the underline color to red */
+        }
+        .home{
+            display: flex;
+            position: relative;
+            align-items: center;
+            min-height: 100vh;
+            background: url(3.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+        .home::before {
+            content: "";
+            position: absolute;
+            top: 8%;
+            left: 0;
+            z-index: 1;
+            height: 100%;
+            width: 70%; /* Adjust the width of the gradient as needed */
+            background: linear-gradient(to left, transparent, rgba(0, 0, 0, 1.5)); /* Gradient background */
+        }
+       .content {
+    position: absolute;
+    top: 55%;
+    left: 5%;
+    z-index: 2;
+    color: white;
+    text-align: center;
+}
+        .content h3{
+            color:white;
+            font-size: 3rem;
+            font-family: Brush Script MT, Brush Script Std, cursive;
+        }
+            /* sidebar bgcolor */
+        .custom-sidebar { 
+            background-color: #a7a9ab; 
+            color: white; 
+        }
+/* latest products css */
+.products .latest-books {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.heading{
+    
+    padding: 1rem;
+    margin: 2rem 0;
+    background-color: #e0e3e6;
+    color: black;
+}
+.book {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 5px;
+  position: relative;
+  min-width:350px;
+  min-height: 300px;
+}
+
+.book-image {
+  height: 300px;
+  width:180px;
+  background-size: cover;
+  background-position: center;
+  margin-right: 0.1rem;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  }
+
+.book-header{
+    margin: 0;
+    text-align: left;
+    max-width: 160px;
+    min-height: 200px;
+}
+
+.book-title {
+  color:black;
+  font-size: 1.1rem;
+  
+}
+
+.book-author {
+  font-size: 1rem;
+  color: black;
+}
+
+.book-button {
+  margin: 0 0 7px 12px;
+  cursor: pointer;
+  max-width: 120px;
+  text-align: center;
+  background:-webkit-linear-gradient(right,#0351b1,#ff00b7);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  
+}
+
+.book-button:hover {
+  transform: scale(1.1);
+}
+/* about us css */
+.about .container{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding:10px;
+  max-height: 500px;
+}
+ .container .video-container{
+  flex:1 1;
+  position: relative;
+ }
+ .video-container video{
+  width: 100%;
+  border-radius: 0.5rem;
+   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+   object-fit: cover;
+ }
+ .container .aboutcontent{
+  flex: 1 1;
+  
+ }
+ .container .aboutcontent p{
+  
+  padding: 5px 0;
+  line-height: 1.5;
+ }
+ .video-container h2{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  width: 100%;
+  padding:10px 0;
+  text-align: center;
+  mix-blend-mode: screen;
+ }
+
+        @media (max-width:991px){
+            .sidebar{
+                background-color: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(100px);
+            }
+            @media (max-width:768px){
+                .content h3{font-size: 1.5rem;
+                }
+                .offcanvas{width:100%;}
+                .container .aboutcontent p{
+                font-size: 1rem;
+              }
+            }
+            @media (max-width:450px){
+              html{
+                font-size: 50%;
+              }
+              .heading{
+                font-size: 3rem;
+              }
+              .container .aboutcontent p{
+                font-size: 1.1rem;
+              }
+
+            }
+            
+            
+        }
+    </style>
+</head>
+<body class="vh-100 ">
+  <section class="home"></section>
+<!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-gray">
+  <div class="container">
+    <!-- logo -->
+    <a class="navbar-brand" href="#">Ebook</a>
+    <!-- toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- sidebar -->
+    <div class="sidebar offcanvas custom-sidebar offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <!-- sidebar header -->
+        <div class="offcanvas-header text-white border-bottom">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Ebook</h5>
+        <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <!-- sidebar body -->
+      <div class="offcanvas-body">
+        
+        <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="category.html">Category</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#contactt">Contact</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#contactt">Community</a>
+          </li>
+          
+        </ul>
+        <!-- <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+        <!-- lgin/signup -->
+        <div class=" d-flex justify-content-center align-items-center flex-lg-row gap-3">
+            
+            <a href="#" class=" text-white text-decoration-none px-3 py-1 rounded-4 btnbg">Login</a>
+        </div> 
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- tagline -->
+<div class="content">
+    <h3>Where book lovers belong.</h3>
+    <p>Come,explore the universe of words,one book at a time</p>
+    <button name="explore" class="btnbg rounded-4 text-white text-decoration-none px-3 py-1"><a href="#Latest books" style="text-decoration: none; color: white;">Explore</a></button>
+</div>
+</section>
+<!-- latest products -->
+<section class="products">
+    <h3 class="heading"><a id="Latest books">Latest books</a></h3>
+    <div class="latest-books">
+        
+        <div class="book">
+          <div class="book-image" style="background-image: url('harry-potter-and-the-philosophers-333.jpg');"></div>
+          <div class="book-info">
+                <div class="book-header">
+                    <h3 class="book-title">Harry potter and the philosophers</h3>
+                    <p class="book-author">J.K.Rowling</p>
+                    <p class="book-author">CATEGORY:Fantasy<br>
+                      <img src="5star.png">
+                    </p>
+                    
+                </div>
+            <button class="book-button rounded-4">Read Now</button>
+            <button class="book-button rounded-4">Save Book</button>
+          </div>
+        </div>
+      
+        <div class="book">
+          <div class="book-image" style="background-image: url('Exorcist.jpg');"></div>
+          <div class="book-info">
+            <div class="book-header">
+                <h3 class="book-title">The Exorcist</h3>
+                <p class="book-author">William Peter Blatty</p>
+                <p class="book-author">CATEGORY:Horror<br>
+                  <img src="3star.png">
+                </p>
+            </div>
+            <button class="book-button rounded-4">Read Now</button>
+            <button class="book-button rounded-4">Save Book</button>
+          </div>
+        </div>
+
+        <div class="book">
+            <div class="book-image" style="background-image: url('Two-States-–-Chetan-Bhagat.jpg');"></div>
+            <div class="book-info">
+              <div class="book-header">
+                  <h3 class="book-title">2 States</h3>
+                  <p class="book-author">Chethan Bhagat</p>
+                  <p class="book-author">CATEGORY:Love<br>
+                    <img src="4star.png">
+                  </p>
+              </div>
+              <button class="book-button rounded-4">Read Now</button>
+              <button class="book-button rounded-4">Save Book</button>
+            </div>
+          </div>
+
+          <div class="book">
+            <div class="book-image" style="background-image: url('freedom-at-midnight.jpg');"></div>
+            <div class="book-info">
+              <div class="book-header">
+                  <h3 class="book-title">Freedom At Midnight</h3>
+                  <p class="book-author">Larry Collins and Dominique Lapierre</p>
+                  <p class="book-author">CATEGORY:History<br>
+                    <img src="4star.png">
+                  </p>
+              </div>
+              <button class="book-button rounded-4">Read Now</button>
+              <button class="book-button rounded-4">Save Book</button>
+            </div>
+          </div>
+
+          <div class="book">
+            <div class="book-image" style="background-image: url('warbodiea.jpg');"></div>
+            <div class="book-info">
+              <div class="book-header">
+                  <h3 class="book-title">War Bodies</h3>
+                  <p class="book-author">Neil Asher</p>
+                  <p class="book-author">CATEGORY:Sci-fi<br>
+                    <img src="3star.png">
+                  </p>
+              </div>
+              <button class="book-button rounded-4">Read Now</button>
+              <button class="book-button rounded-4">Save Book</button>
+            </div>
+          </div>
+
+          <div class="book">
+            <div class="book-image" style="background-image: url('spiderman.jpg');"></div>
+            <div class="book-info">
+              <div class="book-header">
+                  <h3 class="book-title">Spine Tingling Spiderman</h3>
+                  <p class="book-author">Ahmed,Ferreyra</p>
+                  <p class="book-author">CATEGORY:Comics<br>
+                    <img src="5star.png">
+                  </p>
+              </div>
+              <button class="book-button rounded-4">Read Now</button>
+              <button class="book-button rounded-4">Save Book</button>
+            </div>
+          </div>
+
+    </div>
+        
+    </section>  
+    <!-- About us -->
+    <section class="about">
+      <h3 class="heading"><a id="Latest books">About Us</a></h3>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+              <div class="video-container">
+                <video src="vid1.mp4" loop autoplay muted></video>
+                <h2>Read at your own comfort</h2>
+            </div>
+          </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="aboutcontent">
+            <h3>Why choose us?</h3>
+            <p>
+              Discover an extensive and diverse ebook library at our  Ebook website. We offer high-quality content at affordable prices,
+              making your reading experience enjoyable and budget-friendly.
+              Our mission is to make the world of literature accessible to everyone.
+                Through our platform, we aim to promote reading, learning, and creativity.
+            </p>
+            <p>We invite you to become a part of our literary journey. Whether you're a reader, an author, or someone who appreciates the magic of words,
+              [Your Ebook Website Name] is your place to explore, connect, and grow with literature.</p>
+              <p>Happy learning.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
+</html>
+
+-----------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap linking -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .cont {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .image-container {
+            position: relative;
+            border-radius: 30px;
+            width: 350px;
+            height: 200px;
+            background-size: cover;
+            margin: 15px;
+        }
+
+        .image-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 100%;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.95));
+            z-index: 1;
+        }
+
+        .image-container:hover {
+            transform: scale(1.1);
+        }
+
+        .txt {
+            position: absolute;
+            top: 30%;
+            left: 20px;
+            font-size: 35px;
+            font-family: Brush Script MT, Brush Script Std, cursive;
+            text-align: left;
+            transform: translateY(-50%);
+            vertical-align: center;
+            color: black;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        
+            
+                <div class="image-container" style="background-image: url('horror.jpg');">
+                    <p class="txt">Horror</p>
+                </div>
+            
+            
+                <div class="image-container" style="background-image: url('scifi.jpg');">
+                    <p class="txt">Sci-fi</p>
+                </div>
+            
+            
+                <div class="image-container" style="background-image: url('love.jpg');">
+                    <p class="txt">Love</p>
+                </div>
+            
+            
+                <div class="image-container" style="background-image: url('comics.jpg');">
+                    <p class="txt">Comics</p>
+                </div>
+            
+           
+                <div class="image-container" style="background-image: url('mystery.jpg');">
+                    <p class="txt">Mystery</p>
+                </div>
+           
+            
+                <div class="image-container" style="background-image: url('fantasy.jpg');">
+                    <p class="txt">Fantasy</p>
+                </div>
+            
+            
+                <div class="image-container" style="background-image: url('history.jpg');">
+                    <p class="txt">History</p>
+                </div>
+            
+            
+                <div class="image-container" style="background-image: url('science.jpg');">
+                    <p class="txt">Science</p>
+                </div>
+            
+           
+                <div class="image-container" style="background-image: url('finance.jpg');">
+                    <p class="txt">Finance</p>
+                </div>
+            
+        </div>
+    
+</body>
+
+</html>

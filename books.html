@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap linking -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        .products .latest-books {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 5px;
+            
+        }
+
+        .heading {
+            padding: 1rem;
+            margin: 2rem 0;
+            background-color: #e0e3e6;
+            color: black;
+        }
+
+        .book {
+            display: flex;
+            flex-direction: row; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin: 5px 2px;
+            position: relative;
+            
+        }
+        .premium{
+            position: absolute;
+            top:0;
+            right:0;
+            width: 20px;
+            }
+
+        .book-image {
+           
+            width: 200px;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .book-info {
+            text-align: left;
+            display: flex;
+            flex-direction: column; /* Set flex direction to column */
+            padding: 5px;
+        }
+
+        .book-header {
+            text-align: left;
+			min-height:200px;
+			max-width:160px;
+        }
+
+        .book-title {
+            color: black;
+            font-size: 1.1rem;
+            word-wrap: break-word;
+            max-width: 160px;
+        }
+
+        .book-author {
+            font-size: 1rem;
+            color: black;
+        }
+
+        .book-button {
+            margin:0 0 7px 5px;
+            cursor: pointer;
+            background: -webkit-linear-gradient(right, #0351b1, #ff00b7);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            max-width: 120px;
+           
+        }
+
+        .book-button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="products">
+        <!-- <h3 class="heading">Latest books</h3> -->
+        <div class="latest-books">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <img class="premium" src="premium.png">
+                        <div class="book-image"
+                            style="background-image: url('Ghosts-in-the-Dark-Silence-by-Anita-Krishnan.jpg');"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                            <h3 class="book-title">Ghosts in the dark silence</h3>
+                            <p class="book-author">Anitha Krishan</p>
+                            <p class="book-author">CATEGORY: Horror<br>
+                                <img src="4star.png">
+                            </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <div class="book-image" style="background-image: url('Exorcist.jpg');"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                                <h3 class="book-title">The Exorcist</h3>
+                                <p class="book-author">William Peter Blatty</p>
+                                <p class="book-author">CATEGORY:Horror<br>
+                                <img src="3star.png">
+                            </p>
+							</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <div class="book-image" style="background-image: url('The-Haunting-of-Delhi-City-Tales-of-the-Supernatural-by-Jatin-Bhasin-and-Suparna-Chawla-Bhasin.jpg');"></div>
+                        <div class="book-info">
+						<div class="book-header">
+                            <h3 class="book-title">The haunting of delhi</h3>
+                            <p class="book-author">Jatin Bhasin</p>
+                            <p class="book-author">CATEGORY: Horror<br>
+                                <img src="4star.png">
+                            </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <img class="premium" src="premium.png">
+                        <div class="book-image"
+                            style="background-image: url('harry-potter-and-the-philosophers-333.jpg');"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                            <h3 class="book-title">Harry Potter and the Philosophers</h3>
+                            <p class="book-author">J.K.Rowling</p>
+                            <p class="book-author">CATEGORY: Fantasy<br>
+                                <img src="5star.png">
+                            </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <div class="book-image" style="background-image: url(the-time-machine.jpg);"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                            <h3 class="book-title">The Time Machine</h3>
+                            <p class="book-author">H.G.Wells</p>
+                            <p class= "book-author">CATEGORY: Scifi<br>
+                                <img src="3star.png">
+                            </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <img class="premium" src="premium.png">
+                        <div class="book-image"
+                            style="background-image: url('dune.jpg');"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                            <h3 class="book-title">Dune</h3>
+                            <p class="book-author">Frank Herbert</p>
+                            <p class="book-author">CATEGORY:Scifi<br>
+                                <img src="4star.png">
+                            </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <img class="premium" src="premium.png">
+                        <div class="book-image"
+                            style="background-image: url('warbodiea.jpg');"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                                <h3 class="book-title">War Bodies</h3>
+                                <p class="book-author">Neil Asher</p>
+                                <p class="book-author">CATEGORY:Sci-fi<br>
+                                    <img src="3star.png">
+                                </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <div class="book-image" style="background-image: url(Your-Dreams-are-Mine-Now-by-Ravinder-Singh.jpg);"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                            <h3 class="book-title">Your dreams are mine now</h3>
+                            <p class="book-author">Ravinder Singh</p>
+                            <p class= "book-author">CATEGORY:Love<br>
+                                <img src="4star.png">
+                            </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <img class="premium" src="premium.png">
+                        <div class="book-image" style="background-image: url(you-27re-the-password-to-my-life-500x500-2.jpg);"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                            <h3 class="book-title">You are the password to my life</h3>
+                            <p class="book-author">Sudeep Nagarkar</p>
+                            <p class= "book-author">CATEGORY:Love<br>
+                                <img src="4star.png">
+                            </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <img class="premium" src="premium.png">
+                        <div class="book-image" style="background-image: url(Two-States-–-Chetan-Bhagat.jpg);"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                            <h3 class="book-title">2 States</h3>
+                            <p class="book-author">Chethan Bhagat</p>
+                            <p class= "book-author">CATEGORY:Love<br>
+                                <img src="4star.png">
+                            </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        
+                        <div class="book-image" style="background-image: url(stranger-things.jpg);"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                            <h3 class="book-title">Stranger Things</h3>
+                            <p class="book-author">Michael Moreci</p>
+                            <p class= "book-author">CATEGORY:Comics<br>
+                                <img src="5star.png">
+                            </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <img class="premium" src="premium.png">
+                        <div class="book-image" style="background-image: url(avengers.jpg);"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                            <h3 class="book-title">Avengers</h3>
+                            <p class="book-author">Jason Aaron</p>
+                            <p class= "book-author">CATEGORY:Comics<br>
+                                <img src="5star.png">
+                            </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <div class="book-image" style="background-image: url(The-Witches-Pit-Adventures-by-Ishita-Padiyar.jpg);"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                            <h3 class="book-title">The witches pit adventures</h3>
+                            <p class="book-author">Ishitha Padiyar</p>
+                            <p class= "book-author">CATEGORY:Comics<br>
+                                <img src="3star.png">
+                            </p>
+                            
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <div class="book-image" style="background-image: url(freedom-at-midnight.jpg);"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                                <h3 class="book-title">Freedom At Midnight</h3>
+                                <p class="book-author">Larry Collins and Dominique</p>
+                                <p class="book-author">CATEGORY:History<br>
+                                    <img src="4star.png">
+                                </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <img class="premium" src="premium.png">
+                        <div class="book-image" style="background-image: url(murder.jpg);"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                                <h3 class="book-title">Murder in the family</h3>
+                                <p class="book-author">Carra Hunter</p>
+                                <p class="book-author">CATEGORY:Mystery<br>
+                                    <img src="3star.png">
+                                </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <div class="book-image" style="background-image: url(the-perfect-murder.jpg);"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                                <h3 class="book-title">The Perfect Murder</h3>
+                                <p class="book-author">Ruskin Bond</p>
+                                <p class="book-author">CATEGORY:Mystery<br>
+                                    <img src="4star.png">
+                                </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <div class="book-image" style="background-image: url(ask-a-astronaut.jpg);"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                                <h3 class="book-title">Ask a astronaut</h3>
+                                <p class="book-author">Tim Peake</p>
+                                <p class="book-author">CATEGORY:Science<br>
+                                    <img src="3star.png">
+                                </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <div class="book-image" style="background-image: url(the-gene.jpg);"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                                <h3 class="book-title">The Gene</h3>
+                                <p class="book-author">Sidhartha Mukkerjee</p>
+                                <p class="book-author">CATEGORY:Science<br>
+                                    <img src="3star.png">
+                                </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <img class="premium" src="premium.png">
+                        <div class="book-image" style="background-image: url(richdadandpoordad.jpg);"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                                <h3 class="book-title">Rich Dad Poor Dad</h3>
+                                <p class="book-author">Robert T Kiyosaki</p>
+                                <p class="book-author">CATEGORY:Finance<br>
+                                    <img src="5star.png">
+                                </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="book">
+                        <div class="book-image" style="background-image: url(trillions.jpg);"></div>
+                        <div class="book-info">
+							<div class="book-header">
+                                <h3 class="book-title">Trillions</h3>
+                                <p class="book-author">Robin Wigglesworth</p>
+                                <p class="book-author">CATEGORY:Science<br>
+                                    <img src="3star.png">
+                                </p>
+						</div>
+                            <button class="book-button rounded-4">Read Now</button>
+                            <button class="book-button rounded-4">Save Book</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
